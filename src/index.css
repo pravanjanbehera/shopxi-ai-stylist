@@ -2,95 +2,160 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* ShopXi Design System - Luxurious retail/shopping experience */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Brand Colors - Luxurious Purple & Rose Gold */
+    --background: 316 15% 98%;
+    --foreground: 260 8% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 320 20% 99%;
+    --card-foreground: 260 8% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 320 20% 99%;
+    --popover-foreground: 260 8% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Deep Purple for luxury */
+    --primary: 270 50% 40%;
+    --primary-foreground: 320 20% 99%;
+    --primary-glow: 280 60% 60%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Rose Gold for warmth */
+    --secondary: 15 45% 88%;
+    --secondary-foreground: 260 8% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted - Soft neutrals */
+    --muted: 320 15% 95%;
+    --muted-foreground: 260 5% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Gold for premium feel */
+    --accent: 45 85% 70%;
+    --accent-foreground: 260 15% 20%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Success - Emerald for confirmations */
+    --success: 140 70% 45%;
+    --success-foreground: 320 20% 99%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Warning - Amber for alerts */
+    --warning: 35 95% 55%;
+    --warning-foreground: 260 15% 20%;
 
-    --radius: 0.5rem;
+    /* Destructive */
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 320 20% 99%;
 
-    --sidebar-background: 0 0% 98%;
+    /* Border & Input */
+    --border: 320 25% 90%;
+    --input: 320 25% 95%;
+    --ring: 270 50% 40%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --radius: 0.75rem;
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Shopping Specific Colors */
+    --cart: 45 85% 70%;
+    --cart-foreground: 260 15% 20%;
+    --wishlist: 340 70% 60%;
+    --wishlist-foreground: 320 20% 99%;
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(270 50% 40%), hsl(280 60% 60%));
+    --gradient-secondary: linear-gradient(135deg, hsl(15 45% 88%), hsl(25 55% 85%));
+    --gradient-hero: linear-gradient(135deg, hsl(270 50% 40%) 0%, hsl(280 60% 60%) 50%, hsl(15 45% 88%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(320 20% 99%), hsl(315 15% 96%));
 
-    --sidebar-accent: 240 4.8% 95.9%;
+    /* Shadows */
+    --shadow-soft: 0 2px 8px hsl(270 50% 40% / 0.1);
+    --shadow-medium: 0 8px 24px hsl(270 50% 40% / 0.15);
+    --shadow-strong: 0 16px 40px hsl(270 50% 40% / 0.2);
+    --shadow-glow: 0 0 32px hsl(280 60% 60% / 0.3);
 
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    /* Typography */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
 
-    --sidebar-border: 220 13% 91%;
+    /* Animations */
+    --transition-fast: 0.15s ease-out;
+    --transition-normal: 0.25s ease-out;
+    --transition-slow: 0.4s ease-out;
 
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar (for admin/dashboard) */
+    --sidebar-background: 320 20% 99%;
+    --sidebar-foreground: 260 8% 15%;
+    --sidebar-primary: 270 50% 40%;
+    --sidebar-primary-foreground: 320 20% 99%;
+    --sidebar-accent: 320 15% 95%;
+    --sidebar-accent-foreground: 260 8% 15%;
+    --sidebar-border: 320 25% 90%;
+    --sidebar-ring: 270 50% 40%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 260 15% 8%;
+    --foreground: 320 15% 92%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 260 20% 10%;
+    --card-foreground: 320 15% 92%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 260 20% 10%;
+    --popover-foreground: 320 15% 92%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 280 60% 60%;
+    --primary-foreground: 260 15% 8%;
+    --primary-glow: 290 70% 70%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 260 10% 20%;
+    --secondary-foreground: 320 15% 92%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 260 10% 15%;
+    --muted-foreground: 320 10% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 45 85% 65%;
+    --accent-foreground: 260 15% 8%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --success: 140 60% 50%;
+    --success-foreground: 260 15% 8%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --warning: 35 90% 60%;
+    --warning-foreground: 260 15% 8%;
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 320 15% 92%;
+
+    --border: 260 15% 20%;
+    --input: 260 15% 15%;
+    --ring: 280 60% 60%;
+
+    --cart: 45 85% 65%;
+    --cart-foreground: 260 15% 8%;
+    --wishlist: 340 60% 55%;
+    --wishlist-foreground: 320 15% 92%;
+
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(280 60% 60%), hsl(290 70% 70%));
+    --gradient-secondary: linear-gradient(135deg, hsl(260 10% 20%), hsl(270 15% 25%));
+    --gradient-hero: linear-gradient(135deg, hsl(280 60% 60%) 0%, hsl(290 70% 70%) 50%, hsl(260 10% 20%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(260 20% 10%), hsl(255 15% 12%));
+
+    --shadow-soft: 0 2px 8px hsl(260 15% 5% / 0.3);
+    --shadow-medium: 0 8px 24px hsl(260 15% 5% / 0.4);
+    --shadow-strong: 0 16px 40px hsl(260 15% 5% / 0.5);
+    --shadow-glow: 0 0 32px hsl(290 70% 70% / 0.2);
+
+    --sidebar-background: 260 20% 10%;
+    --sidebar-foreground: 320 15% 92%;
+    --sidebar-primary: 280 60% 60%;
+    --sidebar-primary-foreground: 260 15% 8%;
+    --sidebar-accent: 260 10% 15%;
+    --sidebar-accent-foreground: 320 15% 92%;
+    --sidebar-border: 260 15% 20%;
+    --sidebar-ring: 280 60% 60%;
   }
 }
 
@@ -100,6 +165,162 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    background: var(--gradient-secondary);
   }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/50;
+  }
+}
+
+@layer components {
+  /* Shopping specific components */
+  .product-card {
+    @apply bg-card border border-border rounded-xl shadow-lg hover:shadow-xl transition-all duration-300;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .product-card:hover {
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-2px);
+  }
+
+  .hero-section {
+    background: var(--gradient-hero);
+    @apply text-primary-foreground;
+  }
+
+  .feature-card {
+    @apply bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl p-6;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .ai-assistant-bubble {
+    @apply bg-primary text-primary-foreground rounded-2xl px-4 py-2 max-w-sm;
+    box-shadow: var(--shadow-medium);
+  }
+
+  .cart-item {
+    @apply bg-card border border-border rounded-lg p-4 transition-all duration-200;
+  }
+
+  .cart-item:hover {
+    @apply shadow-md;
+    transform: translateX(4px);
+  }
+
+  /* Accessibility mode styles */
+  .accessibility-mode {
+    @apply text-lg leading-relaxed;
+  }
+
+  .accessibility-mode .product-card {
+    @apply border-2 border-accent;
+  }
+
+  /* Animation utilities */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce 2s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* Interactive elements */
+  .interactive-button {
+    @apply transform transition-all duration-200 hover:scale-105 active:scale-95;
+  }
+
+  .glass-effect {
+    @apply bg-card/70 backdrop-blur-md border border-border/30;
+  }
+}
+
+@layer utilities {
+  /* Gradient text utilities */
+  .text-gradient-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-secondary {
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Shadow utilities */
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+
+  .shadow-strong {
+    box-shadow: var(--shadow-strong);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+/* Keyframe animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: var(--shadow-glow);
+  }
+  50% {
+    box-shadow: var(--shadow-strong);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
 }

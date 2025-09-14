@@ -136,11 +136,50 @@ export type Database = {
         }
         Relationships: []
       }
+      outfit_recommendations: {
+        Row: {
+          created_at: string
+          id: string
+          occasion: string | null
+          primary_product_id: string | null
+          recommended_products: string[] | null
+          total_price: number | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          occasion?: string | null
+          primary_product_id?: string | null
+          recommended_products?: string[] | null
+          total_price?: number | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          occasion?: string | null
+          primary_product_id?: string | null
+          recommended_products?: string[] | null
+          total_price?: number | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "outfit_recommendations_primary_product_id_fkey"
+            columns: ["primary_product_id"]
+            isOneToOne: false
+            referencedRelation: "products"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       products: {
         Row: {
           barcode: string
           body_type: string | null
           brand: string | null
+          care_instructions: string | null
           category: string
           color: string | null
           created_at: string
@@ -155,19 +194,24 @@ export type Database = {
           in_stock: boolean
           ingredients: string[] | null
           manufacturing_date: string
+          material: string | null
           name: string
+          occasion: string | null
           original_price: number | null
           price: number
           rating: number | null
           reviews: number | null
           size: string | null
           stock_quantity: number | null
+          style_tags: string[] | null
+          suitable_body_types: string[] | null
           updated_at: string
         }
         Insert: {
           barcode: string
           body_type?: string | null
           brand?: string | null
+          care_instructions?: string | null
           category: string
           color?: string | null
           created_at?: string
@@ -182,19 +226,24 @@ export type Database = {
           in_stock?: boolean
           ingredients?: string[] | null
           manufacturing_date: string
+          material?: string | null
           name: string
+          occasion?: string | null
           original_price?: number | null
           price: number
           rating?: number | null
           reviews?: number | null
           size?: string | null
           stock_quantity?: number | null
+          style_tags?: string[] | null
+          suitable_body_types?: string[] | null
           updated_at?: string
         }
         Update: {
           barcode?: string
           body_type?: string | null
           brand?: string | null
+          care_instructions?: string | null
           category?: string
           color?: string | null
           created_at?: string
@@ -209,13 +258,17 @@ export type Database = {
           in_stock?: boolean
           ingredients?: string[] | null
           manufacturing_date?: string
+          material?: string | null
           name?: string
+          occasion?: string | null
           original_price?: number | null
           price?: number
           rating?: number | null
           reviews?: number | null
           size?: string | null
           stock_quantity?: number | null
+          style_tags?: string[] | null
+          suitable_body_types?: string[] | null
           updated_at?: string
         }
         Relationships: []
@@ -317,6 +370,113 @@ export type Database = {
           user_id?: string
         }
         Relationships: []
+      }
+      user_profiles: {
+        Row: {
+          age: number | null
+          body_type: string | null
+          created_at: string
+          full_name: string | null
+          gender: string | null
+          height_cm: number | null
+          id: string
+          preferred_size: string | null
+          preferred_style: string[] | null
+          skin_tone: string | null
+          updated_at: string
+          user_id: string
+          weight_kg: number | null
+        }
+        Insert: {
+          age?: number | null
+          body_type?: string | null
+          created_at?: string
+          full_name?: string | null
+          gender?: string | null
+          height_cm?: number | null
+          id?: string
+          preferred_size?: string | null
+          preferred_style?: string[] | null
+          skin_tone?: string | null
+          updated_at?: string
+          user_id: string
+          weight_kg?: number | null
+        }
+        Update: {
+          age?: number | null
+          body_type?: string | null
+          created_at?: string
+          full_name?: string | null
+          gender?: string | null
+          height_cm?: number | null
+          id?: string
+          preferred_size?: string | null
+          preferred_style?: string[] | null
+          skin_tone?: string | null
+          updated_at?: string
+          user_id?: string
+          weight_kg?: number | null
+        }
+        Relationships: []
+      }
+      user_rewards: {
+        Row: {
+          created_at: string
+          id: string
+          points_earned: number
+          points_redeemed: number
+          total_points: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          points_earned?: number
+          points_redeemed?: number
+          total_points?: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          points_earned?: number
+          points_redeemed?: number
+          total_points?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      wishlists: {
+        Row: {
+          created_at: string
+          id: string
+          product_id: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          product_id?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          product_id?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "wishlists_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "products"
+            referencedColumns: ["id"]
+          },
+        ]
       }
     }
     Views: {
