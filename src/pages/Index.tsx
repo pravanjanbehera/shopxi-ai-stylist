@@ -21,6 +21,8 @@ import {
 } from 'lucide-react';
 import { toast } from 'sonner';
 
+// Force rebuild to clear Vite cache
+
 // Import generated images
 import heroImage from '@/assets/shopxi-hero.jpg';
 import aiAssistantIcon from '@/assets/ai-assistant-icon.jpg';
